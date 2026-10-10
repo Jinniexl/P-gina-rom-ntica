@@ -86,11 +86,24 @@ document.addEventListener("DOMContentLoaded", () => {
         "assets/gato4.jfif"
     ];
 
+    
     // Precargar los gatitos para evitar pausas al cambiar de imagen.
 gatos.forEach((ruta) => {
     const imagen = new Image();
     imagen.src = ruta;
 });
+
+
+    // Precargar las portadas de las canciones.
+    const portadasPlaylist = Array.from(
+        { length: 11 },
+        (_, i) => `assets/love${i + 1}.jfif`
+    );
+
+    portadasPlaylist.forEach((ruta) => {
+        const imagen = new Image();
+        imagen.src = ruta;
+    });
 
     function cerrarEfectoExplosion() {
         if (explosion) {
