@@ -1,0 +1,1389 @@
+
+/* ========================================
+   REGALO MUSICAL ♡
+   Estilo romántico, delicado y responsive
+======================================== */
+
+/* ---------- 1. VARIABLES Y BASE ---------- */
+
+:root {
+    --rosa-empolvado: #E8B7C8;
+    --rosa-pastel: #F8DDE5;
+    --rosa-claro: #FFF0F4;
+    --crema: #FFF8F0;
+    --beige: #EAD8C0;
+    --dorado: #C9A45C;
+    --dorado-claro: #E9D29B;
+    --rosa-oscuro: #A85D76;
+    --cacao: #6B4545;
+    --blanco: #FFFFFF;
+    --sombra: 0 12px 35px rgba(107, 69, 69, 0.12);
+    --borde-dorado: 1px solid rgba(201, 164, 92, 0.65);
+    --radio: 18px;
+    --transicion: 0.3s ease;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background: var(--rosa-pastel);
+    color: var(--cacao);
+    font-family: "Nunito", sans-serif;
+    line-height: 1.7;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+::selection {
+    color: var(--cacao);
+    background: var(--dorado-claro);
+}
+
+
+/* ---------- 2. FONDO ANIMADO ---------- */
+
+.fondo-animado {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+#contenido-principal {
+    position: relative;
+    z-index: 1;
+}
+
+.corazon-flotante {
+    position: absolute;
+    bottom: -70px;
+    left: var(--posicion, 50%);
+    color: var(--rosa-oscuro);
+    font-size: var(--tamano, 25px);
+    opacity: 0;
+    animation: corazon-subiendo var(--duracion, 12s) linear infinite;
+    animation-delay: var(--retraso, 0s);
+}
+
+.corazon-flotante:nth-child(1) {
+    --posicion: 8%;
+    --tamano: 25px;
+    --duracion: 13s;
+}
+
+.corazon-flotante:nth-child(2) {
+    --posicion: 27%;
+    --tamano: 19px;
+    --duracion: 16s;
+    --retraso: 3s;
+}
+
+.corazon-flotante:nth-child(3) {
+    --posicion: 48%;
+    --tamano: 30px;
+    --duracion: 14s;
+    --retraso: 6s;
+}
+
+.corazon-flotante:nth-child(4) {
+    --posicion: 70%;
+    --tamano: 22px;
+    --duracion: 17s;
+    --retraso: 1s;
+}
+
+.corazon-flotante:nth-child(5) {
+    --posicion: 90%;
+    --tamano: 27px;
+    --duracion: 15s;
+    --retraso: 5s;
+}
+
+
+/* Distribución de los corazones adicionales */
+
+.corazon-flotante:nth-child(n + 6) {
+    left: calc(var(--indice, 1) * 13%);
+    animation-delay: -4s;
+}
+
+@keyframes corazon-subiendo {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    12% {
+        opacity: 0.5;
+    }
+
+    85% {
+        opacity: 0.35;
+    }
+
+    100% {
+        transform: translateY(-115vh) rotate(25deg);
+        opacity: 0;
+    }
+}
+
+.gatito-flotante {
+    position: absolute;
+    bottom: -120px;
+    left: var(--posicion-gato, 20%);
+    width: clamp(48px, 7vw, 82px);
+    height: auto;
+    object-fit: contain;
+    opacity: 0;
+    animation: gatito-subiendo var(--duracion-gato, 20s) linear infinite;
+    animation-delay: var(--retraso-gato, 0s);
+}
+
+
+/* Posición y velocidad de cada gatito */
+.gatito-flotante:nth-of-type(1) {
+  --posicion-gato: 10%;
+  --duracion-gato: 18s;
+  --retraso-gato: 0s;
+}
+
+.gatito-flotante:nth-of-type(2) {
+  --posicion-gato: 35%;
+  --duracion-gato: 23s;
+  --retraso-gato: 4s;
+}
+
+.gatito-flotante:nth-of-type(3) {
+  --posicion-gato: 65%;
+  --duracion-gato: 20s;
+  --retraso-gato: 8s;
+}
+
+.gatito-flotante:nth-of-type(4) {
+  --posicion-gato: 85%;
+  --duracion-gato: 25s;
+  --retraso-gato: 2s;
+}
+
+
+/* Gatitos adicionales */
+.gatito-flotante:nth-of-type(5) {
+  --posicion-gato: 22%;
+  --duracion-gato: 21s;
+  --retraso-gato: 6s;
+}
+
+.gatito-flotante:nth-of-type(6) {
+  --posicion-gato: 48%;
+  --duracion-gato: 26s;
+  --retraso-gato: 3s;
+}
+
+.gatito-flotante:nth-of-type(7) {
+  --posicion-gato: 74%;
+  --duracion-gato: 19s;
+  --retraso-gato: 10s;
+}
+
+.gatito-flotante:nth-of-type(8) {
+  --posicion-gato: 92%;
+  --duracion-gato: 24s;
+  --retraso-gato: 1s;
+}
+
+@keyframes gatito-subiendo {
+    0% {
+        transform: translateY(0) rotate(-8deg);
+        opacity: 0;
+    }
+
+    12% {
+        opacity: 0.75;
+    }
+
+    50% {
+        transform: translateY(-55vh) rotate(8deg);
+    }
+
+    88% {
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: translateY(-120vh) rotate(-5deg);
+        opacity: 0;
+    }
+}
+
+/* Las partículas pueden añadirse después con JavaScript. */
+
+.particulas {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+}
+
+
+/* ---------- 3. PANTALLAS ---------- */
+
+.pantalla {
+    position: relative;
+    min-height: 100vh;
+    min-height: 100svh;
+    padding: 60px 22px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.pantalla-inicio {
+    background: rgba(248, 221, 229, 0.76);
+}
+
+.contenido-pantalla {
+    width: min(95%, 525px);
+    height: auto;
+    margin: auto;
+    padding: clamp(28px, 5vw, 60px);
+    background: rgba(255, 248, 240, 0.94);
+    border: var(--borde-dorado);
+    border-radius: 24px;
+    box-shadow: var(--sombra);
+    animation: aparecer 0.8s ease both;
+}
+
+.ventana-inicio {
+    max-width: 760px;
+}
+
+@keyframes aparecer {
+    from {
+        opacity: 0;
+        transform: translateY(18px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.corazon-portada {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--rosa-oscuro);
+    font-size: clamp(38px, 7vw, 60px);
+    animation: latido 2s ease-in-out infinite;
+}
+
+@keyframes latido {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+
+/* ---------- 4. TÍTULOS Y TEXTOS ---------- */
+
+h1,
+h2,
+h3 {
+    color: var(--cacao);
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+h1 {
+    margin: 12px 0 20px;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+h2 {
+    font-size: clamp(1.8rem, 4vw, 2.7rem);
+}
+
+h3 {
+    font-size: clamp(1.15rem, 2vw, 1.5rem);
+}
+
+.etiqueta-decorativa {
+    color: var(--rosa-oscuro);
+    font-size: 0.92rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+}
+
+.texto-intro,
+.mensaje-introduccion {
+    max-width: 540px;
+    margin: 0 auto 28px;
+    font-size: 1.08rem;
+}
+
+.encabezado-seccion {
+    max-width: 760px;
+    margin: 0 auto 42px;
+    text-align: center;
+}
+
+.encabezado-seccion .etiqueta-decorativa {
+    margin-bottom: 8px;
+}
+
+.encabezado-seccion h2 {
+    margin-bottom: 15px;
+}
+
+.encabezado-seccion > p:last-child {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.etiqueta-decorativa,
+.encabezado-seccion h2 {
+    animation: brillo-suave 4s ease-in-out infinite;
+}
+
+@keyframes brillo-suave {
+    0%, 100% {
+        text-shadow: 0 0 0 rgba(201, 164, 92, 0);
+    }
+
+    50% {
+        text-shadow: 0 0 14px rgba(201, 164, 92, 0.32);
+    }
+}
+
+
+/* ---------- 5. BOTONES ---------- */
+
+.acciones-inicio {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-top: 28px;
+}
+
+.boton {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    min-height: 46px;
+    padding: 12px 22px;
+    border: 1px solid transparent;
+    border-radius: 12px;
+    font-size: 0.96rem;
+    font-weight: 800;
+    text-align: center;
+    line-height: 1.4;
+    transition:
+        transform var(--transicion),
+        background var(--transicion),
+        color var(--transicion),
+        box-shadow var(--transicion),
+        border-color var(--transicion);
+}
+
+.boton-principal {
+    color: var(--blanco);
+    background: var(--rosa-oscuro);
+    border-color: var(--rosa-oscuro);
+    box-shadow: 0 5px 14px rgba(168, 93, 118, 0.16);
+}
+
+.boton-principal:hover {
+    background: var(--cacao);
+    border-color: var(--dorado);
+    box-shadow: 0 6px 20px rgba(107, 69, 69, 0.2);
+    transform: translateY(-3px);
+}
+
+.boton-secundario {
+    color: var(--rosa-oscuro);
+    background: var(--blanco);
+    border-color: var(--rosa-empolvado);
+}
+
+.boton-secundario:hover {
+    border-color: var(--dorado);
+    box-shadow: 0 4px 16px rgba(201, 164, 92, 0.2);
+}
+
+.boton:focus-visible,
+a:focus-visible,
+.cerrar-modal:focus-visible {
+    outline: 3px solid var(--dorado);
+    outline-offset: 4px;
+}
+
+.parpadeo-si {
+    animation: resplandor-si 1.3s ease-in-out infinite;
+}
+
+@keyframes resplandor-si {
+    0%, 100% {
+        box-shadow: 0 0 0 rgba(201, 164, 92, 0);
+    }
+
+    50% {
+        box-shadow: 0 0 20px rgba(201, 164, 92, 0.55);
+    }
+}
+
+
+@media (max-width: 900px) {
+  .contenedor-canciones {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .contenedor-canciones {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+/* ---------- 6. REACCIÓN DEL BOTÓN NO ---------- */
+
+.reaccion-no {
+    margin-top: 25px;
+    animation: aparecer 0.4s ease both;
+}
+
+.reaccion-no img {
+    width: 140px;
+    max-height: 150px;
+    margin: 0 auto 10px;
+    object-fit: contain;
+}
+
+.mensaje-boton {
+    color: var(--rosa-oscuro);
+    font-weight: 800;
+}
+
+
+/* ---------- 7. SECCIÓN DE CANCIONES ---------- */
+
+.seccion-canciones,
+.seccion-playlist {
+    width: min(1200px, 100%);
+    margin: 0 auto;
+    padding: clamp(45px, 7vw, 85px) 24px;
+}
+
+.cuadricula-canciones {
+
+display: grid;
+grid-template-columns: repeat(4, minmax(0, 1fr));
+gap: 16px;
+    align-items: stretch;
+}
+
+/* Tarjetas musicales */
+
+.cancion-card {
+    min-width: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 248, 240, 0.97);
+    border: 1px solid rgba(201, 164, 92, 0.48);
+    border-radius: var(--radio);
+    box-shadow: 0 7px 24px rgba(107, 69, 69, 0.09);
+    transition:
+        transform var(--transicion),
+        box-shadow var(--transicion),
+        border-color var(--transicion);
+}
+
+.cancion-card:hover {
+    transform: translateY(-6px);
+    border-color: var(--dorado);
+    box-shadow: 0 15px 32px rgba(107, 69, 69, 0.14);
+}
+
+/* Portada */
+
+.portada-cancion {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+    background: var(--rosa-pastel);
+}
+
+.portada-cancion img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.cancion-card:hover .portada-cancion img {
+    transform: scale(1.045);
+}
+
+.numero-cancion {
+    position: absolute;
+    top: 14px;
+    left: 14px;
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    color: var(--cacao);
+    background: rgba(255, 248, 240, 0.94);
+    border: 1px solid var(--dorado);
+    border-radius: 50%;
+    font-weight: 800;
+    box-shadow: 0 3px 10px rgba(107, 69, 69, 0.12);
+}
+
+/* Información de cada canción */
+
+.informacion-cancion {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: stretch;
+    padding: 24px;
+}
+
+.subtitulo-cancion {
+    margin-bottom: 5px;
+    color: var(--rosa-oscuro);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.titulo-cancion {
+    margin-bottom: 20px;
+    overflow-wrap: anywhere;
+}
+
+/* Reproductor visual decorativo */
+
+.reproductor-visual {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 0 0 24px;
+    color: var(--rosa-oscuro);
+}
+
+.tiempo-actual,
+.duracion {
+    flex-shrink: 0;
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+.barra-progreso {
+    position: relative;
+    flex: 1;
+    height: 6px;
+    overflow: hidden;
+    background: #EAD8D5;
+    border-radius: 99px;
+}
+
+
+.progreso {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    border-radius: inherit;
+    background: linear-gradient(
+        90deg,
+        #E8B7C8,
+        #C9A45C,
+        #F8DDE5,
+        #C9A45C
+    );
+    background-size: 200% 100%;
+    animation: llenar-barra 8s ease-in-out infinite,
+               brillo-barra 3s linear infinite;
+    box-shadow: 0 0 8px rgba(201, 164, 92, 0.45);
+}
+
+@keyframes llenar-barra {
+    0% {
+        width: 0%;
+    }
+    85% {
+        width: 100%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@keyframes brillo-barra {
+    from {
+        background-position: 100% 0;
+    }
+    to {
+        background-position: -100% 0;
+    }
+}
+
+/* Botones de las tarjetas */
+
+.acciones-cancion {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+    margin-top: auto;
+}
+
+.acciones-cancion .boton {
+    width: 100%;
+}
+
+.boton-escuchar {
+    color: var(--blanco);
+    background: var(--rosa-oscuro);
+    border-color: var(--rosa-oscuro);
+}
+
+.boton-escuchar:hover {
+    color: var(--blanco);
+    background: var(--cacao);
+    border-color: var(--dorado);
+}
+
+.boton-mensaje {
+    color: var(--rosa-oscuro);
+    background: var(--blanco);
+    border-color: var(--rosa-empolvado);
+}
+
+.boton-mensaje:hover {
+    color: var(--cacao);
+    background: var(--rosa-claro);
+    border-color: var(--dorado);
+}
+
+
+/* ---------- 8. TRANSICIÓN A LA PLAYLIST ---------- */
+
+.transicion-playlist {
+    margin-top: 55px;
+    padding: 30px 20px;
+    text-align: center;
+    background: rgba(255, 248, 240, 0.75);
+    border: var(--borde-dorado);
+    border-radius: var(--radio);
+}
+
+.transicion-playlist p {
+    margin-bottom: 18px;
+    font-family: "Playfair Display", serif;
+    font-size: 1.35rem;
+}
+
+
+/* ---------- 9. LISTA DE LA PLAYLIST ---------- */
+
+.lista-playlist {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0;
+    list-style: none;
+}
+
+.lista-playlist li {
+    display: grid;
+    grid-template-columns: 42px minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 15px;
+    padding: 16px 20px;
+    background: rgba(255, 248, 240, 0.94);
+    border: 1px solid rgba(201, 164, 92, 0.4);
+    border-radius: 14px;
+    transition:
+        border-color var(--transicion),
+        transform var(--transicion);
+}
+
+.lista-playlist li:hover {
+    border-color: var(--dorado);
+    transform: translateX(3px);
+}
+
+.lista-playlist li > span:first-child {
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    color: var(--rosa-oscuro);
+    background: var(--rosa-pastel);
+    border-radius: 50%;
+    font-weight: 800;
+}
+
+.lista-playlist li > span:nth-child(2) {
+    overflow-wrap: anywhere;
+    font-weight: 700;
+}
+
+.lista-playlist li a {
+    color: var(--rosa-oscuro);
+    font-size: 0.9rem;
+    font-weight: 800;
+}
+
+.lista-playlist li a:hover {
+    color: var(--cacao);
+    text-decoration: underline;
+    text-decoration-color: var(--dorado);
+}
+
+.boton-escuchar-playlist {
+    display: flex;
+    width: fit-content;
+    max-width: 100%;
+    margin: 28px auto 0;
+    color: var(--cacao);
+    background: var(--crema);
+    border-color: var(--dorado);
+}
+
+.boton-escuchar-playlist:hover {
+    background: var(--rosa-claro);
+    transform: translateY(-3px);
+}
+
+
+/* ---------- 10. MENSAJE FINAL ---------- */
+
+.mensaje-final {
+    margin-top: 60px;
+    padding: clamp(25px, 5vw, 45px);
+    text-align: center;
+    background: rgba(255, 248, 240, 0.95);
+    border: var(--borde-dorado);
+    border-radius: 22px;
+    box-shadow: var(--sombra);
+}
+
+.mensaje-final .etiqueta-decorativa {
+    margin-bottom: 12px;
+}
+
+.mensaje-final h2 {
+    margin-bottom: 18px;
+}
+
+.mensaje-final > p:last-child {
+    max-width: 620px;
+    margin: 0 auto;
+    white-space: pre-line;
+}
+
+.volver-inicio-contenedor {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+
+/* ---------- 11. MODAL DE DEDICATORIAS ---------- */
+
+.fondo-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow-y: auto;
+    padding: 22px;
+    background: rgba(66, 39, 48, 0.56);
+    backdrop-filter: blur(6px);
+}
+
+.modal-mensaje {
+    position: relative;
+    width: min(100%, 520px);
+    max-height: 90vh;
+    overflow-y: auto;
+    padding: clamp(28px, 5vw, 46px);
+    color: var(--cacao);
+    text-align: center;
+    background: var(--crema);
+    border: 1px solid var(--dorado);
+    border-radius: 22px;
+    box-shadow: 0 20px 60px rgba(40, 20, 25, 0.22);
+    animation: aparecer 0.3s ease both;
+}
+
+.modal-mensaje .etiqueta-decorativa {
+    margin: 12px 0;
+}
+
+.modal-mensaje h2 {
+    margin-bottom: 18px;
+}
+
+.modal-mensaje #texto-modal {
+    margin-bottom: 25px;
+    overflow-wrap: anywhere;
+    white-space: pre-line;
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    display: grid;
+    place-items: center;
+    width: 38px;
+    height: 38px;
+    color: var(--rosa-oscuro);
+    background: transparent;
+    border: none;
+    border-radius: 50%;
+    font-size: 30px;
+    line-height: 1;
+    transition: background var(--transicion);
+}
+
+.cerrar-modal:hover {
+    background: var(--rosa-pastel);
+}
+
+
+
+
+/* ---------- 12. SORPRESA DEL GATITO ---------- */
+
+.explosion-gatito {
+    position: fixed;
+    inset: 0;
+    z-index: 3000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(66, 39, 48, 0.56);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+/* Cajita decorativa */
+.explosion-gatito .caja-gatito {
+    position: relative;
+    box-sizing: border-box;
+    width: min(92vw, 560px);
+    max-height: 88vh;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 248, 240, 0.98);
+    border: 1px solid var(--dorado);
+    border-radius: 24px;
+    box-shadow:
+        0 12px 35px rgba(107, 69, 69, 0.20),
+        0 0 12px rgba(201, 164, 92, 0.45),
+        0 0 28px rgba(201, 164, 92, 0.22);
+    animation: entrada-caja-gatito 0.5s ease both,
+               brillo-caja-gatito 3s ease-in-out 0.5s infinite;
+}
+
+/* GIF original: más grande y con poco margen rosa */
+.explosion-gatito .caja-gatito img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    max-width: 520px;
+    max-height: 76vh;
+    padding: 0;
+    object-fit: contain;
+    border: 0;
+    border-radius: 8px;
+    background: var(--rosa-pastel);
+    filter: drop-shadow(0 4px 8px rgba(168, 93, 118, 0.12));
+    animation: entrada-gatito 0.7s 0.1s ease both;
+}
+
+/* Brillo dorado suave */
+@keyframes brillo-caja-gatito {
+    0%, 100% {
+        box-shadow:
+            0 12px 35px rgba(107, 69, 69, 0.20),
+            0 0 12px rgba(201, 164, 92, 0.35),
+            0 0 22px rgba(201, 164, 92, 0.15);
+    }
+
+    50% {
+        box-shadow:
+            0 12px 35px rgba(107, 69, 69, 0.20),
+            0 0 18px rgba(201, 164, 92, 0.70),
+            0 0 36px rgba(201, 164, 92, 0.30);
+    }
+}
+
+/* Entrada animada */
+@keyframes entrada-caja-gatito {
+    from {
+        opacity: 0;
+        transform: scale(0.85) translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+@keyframes entrada-gatito {
+    from {
+        opacity: 0;
+        transform: scale(0.94);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Botón de cerrar: conservamos su apariencia */
+.cerrar-explosion {
+    position: absolute;
+    z-index: 5;
+    top: 20px;
+    right: 22px;
+    width: 44px;
+    height: 44px;
+    color: #6B4545;
+    background: #FFF8F0;
+    border: 1px solid #C9A45C;
+    border-radius: 50%;
+    font-size: 30px;
+    line-height: 1;
+    transition: transform 0.3s ease;
+}
+
+.cerrar-explosion:hover {
+    transform: rotate(90deg);
+}
+
+@media (max-width: 540px) {
+    .explosion-gatito .caja-gatito {
+        width: 94vw;
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    .explosion-gatito .caja-gatito img {
+        max-height: 68vh;
+        border-radius: 6px;
+    }
+}
+
+/* ---------- 13. PIE DE PÁGINA ---------- */
+
+.pie-pagina {
+    position: relative;
+    z-index: 1;
+    padding: 24px 20px;
+    color: var(--rosa-oscuro);
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+
+/* ---------- 14. RESPONSIVE: TABLETS ---------- */
+
+@media (max-width: 760px) {
+    .cuadricula-canciones {
+        gap: 20px;
+    }
+
+    .informacion-cancion {
+        padding: 19px;
+    }
+
+    .seccion-canciones,
+    .seccion-playlist {
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+
+    .encabezado-seccion {
+        margin-bottom: 30px;
+    }
+}
+
+
+/* ---------- 15. RESPONSIVE: MÓVILES ---------- */
+
+@media (max-width: 540px) {
+    .pantalla {
+        padding: 28px 16px;
+    }
+
+    .contenido-pantalla {
+        padding: 30px 22px;
+        border-radius: 20px;
+    }
+
+    .acciones-inicio {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .acciones-inicio .boton {
+        width: 100%;
+    }
+
+    .cuadricula-canciones {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+    }
+
+    .portada-cancion {
+        aspect-ratio: 16 / 10;
+    }
+
+    .informacion-cancion {
+        padding: 22px;
+    }
+
+    .seccion-canciones,
+    .seccion-playlist {
+        padding: 38px 16px;
+    }
+
+    .transicion-playlist {
+        margin-top: 35px;
+        padding: 25px 16px;
+    }
+
+    .lista-playlist li {
+        grid-template-columns: 36px minmax(0, 1fr);
+        gap: 10px;
+        padding: 14px;
+    }
+
+    .lista-playlist li > span:first-child {
+        width: 34px;
+        height: 34px;
+    }
+
+    .lista-playlist li a {
+        grid-column: 2;
+        justify-self: start;
+    }
+
+    .mensaje-final {
+        margin-top: 38px;
+    }
+
+    .fondo-modal {
+        padding: 14px;
+    }
+
+    .modal-mensaje {
+        padding: 38px 22px 26px;
+    }
+
+    .gatito-flotante {
+        width: 48px;
+    }
+}
+
+
+/* ---------- 16. ACCESIBILIDAD ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+
+
+.boton-dorado {
+    border: 1px solid #C9A45C;
+    transition: box-shadow 0.35s ease,
+                background 0.35s ease,
+                transform 0.35s ease;
+}
+
+.boton-dorado:hover {
+    background: linear-gradient(
+        135deg,
+        #A85D76,
+        #B8758A,
+        #98516B
+    );
+
+    color: #FFFFFF;
+
+    box-shadow:
+        0 0 8px rgba(201, 164, 92, 0.65),
+        0 0 18px rgba(201, 164, 92, 0.4),
+        inset 0 0 6px rgba(255, 255, 255, 0.12);
+
+    transform: translateY(-2px);
+}
+
+
+/* Invitación a leer la carta */
+.mensaje-final {
+    text-align: center;
+    max-width: 650px;
+    margin: 55px auto 35px;
+    padding: 30px 22px;
+}
+
+.mensaje-final h2 {
+    margin-bottom: 14px;
+}
+
+.mensaje-final > p:not(.etiqueta-decorativa) {
+    max-width: 480px;
+    margin: 0 auto 24px;
+    line-height: 1.8;
+}
+
+/* Fondo de la carta emergente */
+.fondo-modal-carta {
+    z-index: 1000;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+/* Papel de la carta */
+.modal-carta {
+    position: relative;
+    width: min(100%, 600px);
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    margin: auto;
+    padding: 38px 34px;
+    background: #FFF8F0;
+    color: #6B4545;
+    border: 2px solid #C9A45C;
+    border-radius: 18px;
+    box-shadow: 0 18px 60px rgba(80, 35, 50, 0.22);
+    animation: aparecer-carta 0.4s ease both;
+}
+
+.decoracion-carta {
+    color: #C9A45C;
+    font-size: 38px;
+    text-align: center;
+    margin-bottom: 8px;
+}
+
+.modal-carta h2 {
+    color: #A85D76;
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    margin: 12px 0 25px;
+}
+
+.modal-carta .etiqueta-decorativa {
+    text-align: center;
+}
+
+.contenido-carta {
+    font-size: 1rem;
+    line-height: 1.9;
+    white-space: normal;
+}
+
+.contenido-carta p {
+    margin: 0 0 18px;
+}
+
+.firma-carta {
+    margin-top: 28px !important;
+    text-align: right;
+    color: #A85D76;
+    font-family: "Playfair Display", serif;
+    font-style: italic;
+}
+
+.modal-carta > .boton {
+    display: block;
+    margin: 25px auto 0;
+}
+
+.modal-carta .cerrar-modal {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+}
+
+@keyframes aparecer-carta {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 480px) {
+    .modal-carta {
+        padding: 34px 22px 25px;
+    }
+
+    .contenido-carta {
+        font-size: 0.95rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .modal-carta {
+        animation: none;
+    }
+}
+
+
+/* Barra de scroll personalizada ♡ */
+
+/* Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #D99AAF #F8DDE5;
+}
+
+/* Chrome, Opera y Edge */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F8DDE5;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+        180deg,
+        #E8B7C8,
+        #A85D76
+    );
+    border-radius: 20px;
+    border: 2px solid #F8DDE5;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #C9A45C;
+}
+
+
+/* Corazoncitos al abrir la carta ♡ */
+.lluvia-corazones {
+    position: fixed;
+    inset: 0;
+    z-index: 1001;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.corazon-flotante {
+    position: absolute;
+    bottom: 12%;
+    left: var(--posicion-x);
+    color: var(--color-corazon);
+    font-size: var(--tamano-corazon);
+    opacity: 0;
+    animation: corazon-subiendo var(--duracion) ease-out forwards;
+    animation-delay: var(--retraso);
+    filter: drop-shadow(0 2px 5px rgba(168, 93, 118, 0.15));
+}
+
+@keyframes corazon-subiendo {
+    0% {
+        transform: translate(0, 0) scale(0.4) rotate(-15deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 1;
+    }
+
+    70% {
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: translate(var(--movimiento-x), -75vh)
+                   scale(1.1) rotate(20deg);
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .corazon-flotante {
+        animation: none;
+        display: none;
+    }
+}

@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#F8DDE5">
+    <meta name="description" content="Un pequeño regalo hecho con amor, canciones y recuerdos.">
+    <title>Un regalo para ti ♡</title>
+
+    <!-- Tipografías: afinaremos la combinación en la fase de CSS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+<div class="fondo-animado" aria-hidden="true">
+    <span class="corazon-flotante">♡</span>
+    <span class="corazon-flotante">♥</span>
+    <span class="corazon-flotante">❤</span>
+    <span class="corazon-flotante">♡</span>
+    <span class="corazon-flotante">♥</span>
+    
+<span class="corazon-flotante">♡</span>
+<span class="corazon-flotante">♥</span>
+<span class="corazon-flotante">♡</span>
+<span class="corazon-flotante">♥</span>
+<span class="corazon-flotante">♡</span>
+<span class="corazon-flotante">♥</span>
+<span class="corazon-flotante">♡</span>
+<span class="corazon-flotante">♥</span>
+<span class="corazon-flotante">♡</span>
+<span class="corazon-flotante">♥</span>
+<span class="corazon-flotante">♡</span>
+<span class="corazon-flotante">♥</span>
+<span class="corazon-flotante">♡</span>
+<span class="corazon-flotante">♥</span>
+<span class="corazon-flotante">♡</span>
+
+    <img class="gatito-flotante" src="assets/cat1.png" alt="">
+    <img class="gatito-flotante" src="assets/cat2.png" alt="">
+    <img class="gatito-flotante" src="assets/cat3.png" alt="">
+    <img class="gatito-flotante" src="assets/cat4.png" alt="">
+    
+<img src="assets/cat1.png" class="gatito-flotante" alt="" aria-hidden="true">
+<img src="assets/cat2.png" class="gatito-flotante" alt="" aria-hidden="true">
+<img src="assets/cat3.png" class="gatito-flotante" alt="" aria-hidden="true">
+<img src="assets/cat4.png" class="gatito-flotante" alt="" aria-hidden="true">
+</div>
+
+    <!-- Decoración ambiental: los corazones y destellos se añadirán con CSS/JS -->
+    <div class="fondo-animado" aria-hidden="true">
+        <div class="particulas"></div>
+    </div>
+
+    <main id="contenido-principal">
+        <!-- FASE 1: pantalla de bienvenida con el botón que huye -->
+
+<section class="pantalla pantalla-inicio activa" id="inicio" aria-labelledby="titulo-inicio">
+    <div class="contenido-pantalla ventana-inicio">
+        <span class="corazon-portada">❤</span>
+
+        <p class="etiqueta-decorativa">Un pequeño detalle para ti ♡</p>
+
+        <h1 id="titulo-inicio">Con mucho mucho amor...</h1>
+
+        <p class="texto-intro">
+            Preparé algo especial para ti.
+            ¿Quieres descubrirlo? ♡
+        </p>
+
+        <div class="acciones-inicio botones-inicio">
+            <button class="boton boton-principal" id="boton-si" type="button">
+                Sí ♡
+            </button>
+
+            <button class="boton boton-secundario" id="boton-no" type="button">
+                No 
+            </button>
+        </div>
+
+
+<div class="reaccion-no" id="reaccion-no" hidden>
+    <img
+        src="assets/gato1.jfif"
+        alt="Gatito con cara de enojo"
+        id="imagen-gatito"
+    >
+    <p class="mensaje-boton" id="mensaje-boton" aria-live="polite"></p>
+</div>
+    </div>
+</section>
+
+        <!-- FASE 2: introducción antes de descubrir las canciones -->
+        <section class="pantalla pantalla-introduccion" id="introduccion" aria-labelledby="titulo-introduccion" hidden>
+            <div class="contenido-pantalla">
+                <p class="etiqueta-decorativa">Para ti, con cariño ♡</p>
+                <h2 id="titulo-introduccion">Hice algo lindo y especial...</h2>
+                <p class="mensaje-introduccion">
+                    Quería dedicarte canciones de una manera bonita y significativa.
+                </p>
+
+<button class="boton boton-principal boton-dorado" id="boton-continuar" type="button">
+    Continuar ♡
+</button>
+            </div>
+        </section>
+
+        <!-- FASE 3: cuadrícula de canciones -->
+        <section class="seccion-canciones" id="canciones" aria-labelledby="titulo-canciones" hidden>
+            <header class="encabezado-seccion">
+                <p class="etiqueta-decorativa">♡</p>
+                <h2 id="titulo-canciones">Nuestras canciones!</h2>
+                <p>Cada canción te la dedico con mucho cariño y amor, quiero que las escuches y pienses en nosotros.</p>
+            </header>
+
+            <!--
+                Duplica un article.cancion-card por cada canción.
+                Sustituye la imagen, el título, el enlace musical y el mensaje.
+                Los enlaces de ejemplo quedan como marcadores hasta añadir los reales.
+            -->
+            <div class="cuadricula-canciones" id="cuadricula-canciones">
+                <article class="cancion-card" data-cancion="1">
+                    <div class="portada-cancion">
+                        <img src="assets/love1.jfif" alt="Portada de la canción 1" loading="lazy">
+                        <span class="numero-cancion">01</span>
+                    </div>
+                    <div class="informacion-cancion">
+                        <p class="subtitulo-cancion">Canción 01</p>
+                        <h3 class="titulo-cancion">Labios Rotos</h3>
+                        <div class="reproductor-visual" aria-label="Barra visual decorativa; la canción se escucha en la plataforma musical">
+                            <span class="tiempo-actual">♡</span>
+                            <div class="barra-progreso" aria-hidden="true">
+                                <span class="progreso"></span>
+                                <span class="indicador-progreso"></span>
+                            </div>
+                            <span class="duracion">♫</span>
+                        </div>
+                        <div class="acciones-cancion">
+
+<a class="boton boton-escuchar boton-dorado" href="https://music.youtube.com/watch?v=7h2ryr_uUEs&list=PLMPVl3c4ytqM" target="_blank" rel="noopener noreferrer">
+    ▶ Escuchar canción
+</a>
+                            <button class="boton boton-mensaje" type="button"
+                                data-mensaje="mensaje-1" aria-haspopup="dialog">
+                                ¿Por qué esta? ♡
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="cancion-card" data-cancion="2">
+                    <div class="portada-cancion">
+                        <img src="assets/love2.jfif" alt="Portada de la canción 2" loading="lazy">
+                        <span class="numero-cancion">02</span>
+                    </div>
+                    <div class="informacion-cancion">
+                        <p class="subtitulo-cancion">Canción 02</p>
+                        <h3 class="titulo-cancion">Soñé</h3>
+                        <div class="reproductor-visual" aria-label="Barra visual decorativa; la canción se escucha en la plataforma musical">
+                            <span class="tiempo-actual">♡</span>
+                            <div class="barra-progreso" aria-hidden="true">
+                                <span class="progreso"></span>
+                                <span class="indicador-progreso"></span>
+                            </div>
+                            <span class="duracion">♫</span>
+                        </div>
+                        <div class="acciones-cancion">
+
+<a class="boton boton-escuchar boton-dorado" href="https://music.youtube.com/watch?v=HJqlA_HTEU8&list=PLMPVl3c4ytqM" target="_blank" rel="noopener noreferrer">
+    ▶ Escuchar canción
+</a>
+                            <button class="boton boton-mensaje" type="button"
+                                data-mensaje="mensaje-2" aria-haspopup="dialog">
+                                ¿Por qué esta? ♡
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="cancion-card" data-cancion="3">
+                    <div class="portada-cancion">
+                        <img src="assets/love3.jfif" alt="Portada de la canción 3" loading="lazy">
+                        <span class="numero-cancion">03</span>
+                    </div>
+                    <div class="informacion-cancion">
+                        <p class="subtitulo-cancion">Canción 03</p>
+                        <h3 class="titulo-cancion">Locos</h3>
+                        <div class="reproductor-visual" aria-label="Barra visual decorativa; la canción se escucha en la plataforma musical">
+                            <span class="tiempo-actual">♡</span>
+                            <div class="barra-progreso" aria-hidden="true">
+                                <span class="progreso"></span>
+                                <span class="indicador-progreso"></span>
+                            </div>
+                            <span class="duracion">♫</span>
+                        </div>
+                        <div class="acciones-cancion">
+                            <a class="boton boton-escuchar boton-dorado" href="https://music.youtube.com/watch?v=SXcFYnHSG08&list=PLMPVl3c4ytqM" target="_blank" rel="noopener noreferrer">
+                                ▶ Escuchar canción
+                            </a>
+                            <button class="boton boton-mensaje" type="button"
+                                data-mensaje="mensaje-3" aria-haspopup="dialog">
+                                ¿Por qué esta? ♡
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="cancion-card" data-cancion="4">
+                    <div class="portada-cancion">
+                        <img src="assets/love4.jfif" alt="Portada de la canción 4" loading="lazy">
+                        <span class="numero-cancion">04</span>
+                    </div>
+                    <div class="informacion-cancion">
+                        <p class="subtitulo-cancion">Canción 04</p>
+                        <h3 class="titulo-cancion">Cariño</h3>
+                        <div class="reproductor-visual" aria-label="Barra visual decorativa; la canción se escucha en la plataforma musical">
+                            <span class="tiempo-actual">♡</span>
+                            <div class="barra-progreso" aria-hidden="true">
+                                <span class="progreso"></span>
+                                <span class="indicador-progreso"></span>
+                            </div>
+                            <span class="duracion">♫</span>
+                        </div>
+                        <div class="acciones-cancion">
+                            <a class="boton boton-escuchar boton-dorado" href="https://music.youtube.com/watch?v=QHVp9xiUr9U&list=PLMPVl3c4ytqM" target="_blank" rel="noopener noreferrer">
+                                ▶ Escuchar canción
+                            </a>
+                            <button class="boton boton-mensaje" type="button"
+                                data-mensaje="mensaje-4" aria-haspopup="dialog">
+                                ¿Por qué esta? ♡
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                                <article class="cancion-card" data-cancion="5">
+                    <div class="portada-cancion">
+                        <img src="assets/love5.jfif" alt="Portada de la canción 5" loading="lazy">
+                        <span class="numero-cancion">05</span>
+                    </div>
+                    <div class="informacion-cancion">
+                        <p class="subtitulo-cancion">Canción 05</p>
+                        <h3 class="titulo-cancion">Química Mayor</h3>
+                        <div class="reproductor-visual" aria-label="Barra visual decorativa; la canción se escucha en la plataforma musical">
+                            <span class="tiempo-actual">♡</span>
+                            <div class="barra-progreso" aria-hidden="true">
+                                <span class="progreso"></span>
+                                <span class="indicador-progreso"></span>
+                            </div>
+                            <span class="duracion">♫</span>
+                        </div>
+                        <div class="acciones-cancion">
+                            <a class="boton boton-escuchar boton-dorado" href="https://music.youtube.com/watch?v=e23BTGIJcq8&list=PLMPVl3c4ytqM" target="_blank" rel="noopener noreferrer">
+                                ▶ Escuchar canción
+                            </a>
+                            <button class="boton boton-mensaje" type="button"
+                                data-mensaje="mensaje-5" aria-haspopup="dialog">
+                                ¿Por qué esta? ♡
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                                <article class="cancion-card" data-cancion="6">
+                    <div class="portada-cancion">
+                        <img src="assets/love6.jfif" alt="Portada de la canción 6" loading="lazy">
+                        <span class="numero-cancion">06</span>
+                    </div>
+                    <div class="informacion-cancion">
+                        <p class="subtitulo-cancion">Canción 06</p>
+                        <h3 class="titulo-cancion">Frances Limón</h3>
+                        <div class="reproductor-visual" aria-label="Barra visual decorativa; la canción se escucha en la plataforma musical">
+                            <span class="tiempo-actual">♡</span>
+                            <div class="barra-progreso" aria-hidden="true">
+                                <span class="progreso"></span>
+                                <span class="indicador-progreso"></span>
+                            </div>
+                            <span class="duracion">♫</span>
+                        </div>
+                        <div class="acciones-cancion">
+                            <a class="boton boton-escuchar boton-dorado" href="https://music.youtube.com/watch?v=23wz86ZbD-o&list=PLMPVl3c4ytqM" target="_blank" rel="noopener noreferrer">
+                                ▶ Escuchar canción
+                            </a>
+                            <button class="boton boton-mensaje" type="button"
+                                data-mensaje="mensaje-6" aria-haspopup="dialog">
+                                ¿Por qué esta? ♡
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                                <article class="cancion-card" data-cancion="7">
+                    <div class="portada-cancion">
+                        <img src="assets/love7.jfif" alt="Portada de la canción 7" loading="lazy">
+                        <span class="numero-cancion">07</span>
+                    </div>
+                    <div class="informacion-cancion">
+                        <p class="subtitulo-cancion">Canción 07</p>
+                        <h3 class="titulo-cancion">Beso</h3>
+                        <div class="reproductor-visual" aria-label="Barra visual decorativa; la canción se escucha en la plataforma musical">
+                            <span class="tiempo-actual">♡</span>
+                            <div class="barra-progreso" aria-hidden="true">
+                                <span class="progreso"></span>
+                                <span class="indicador-progreso"></span>
+                            </div>
+                            <span class="duracion">♫</span>
+                        </div>
+                        <div class="acciones-cancion">
+                            <a class="boton boton-escuchar boton-dorado" href="https://music.youtube.com/watch?v=ntdwWKaGaPQ&list=PLMPVl3c4ytqM" target="_blank" rel="noopener noreferrer">
+                                ▶ Escuchar canción
+                            </a>
+                            <button class="boton boton-mensaje" type="button"
+                                data-mensaje="mensaje-7" aria-haspopup="dialog">
+                                ¿Por qué esta? ♡
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                                <article class="cancion-card" data-cancion="8">
+                    <div class="portada-cancion">
+                        <img src="assets/love8.jfif" alt="Portada de la canción 8" loading="lazy">
+                        <span class="numero-cancion">08</span>
+                    </div>
+                    <div class="informacion-cancion">
+                        <p class="subtitulo-cancion">Canción 08</p>
+                        <h3 class="titulo-cancion">Bésame mucho</h3>
+                        <div class="reproductor-visual" aria-label="Barra visual decorativa; la canción se escucha en la plataforma musical">
+                            <span class="tiempo-actual">♡</span>
+                            <div class="barra-progreso" aria-hidden="true">
+                                <span class="progreso"></span>
+                                <span class="indicador-progreso"></span>
+                            </div>
+                            <span class="duracion">♫</span>
+                        </div>
+                        <div class="acciones-cancion">
+                            <a class="boton boton-escuchar boton-dorado" href="https://music.youtube.com/watch?v=CSELNSslBVk&list=PLMPVl3c4ytqM" target="_blank" rel="noopener noreferrer">
+                                ▶ Escuchar canción
+                            </a>
+                            <button class="boton boton-mensaje" type="button"
+                                data-mensaje="mensaje-8" aria-haspopup="dialog">
+                                ¿Por qué esta? ♡
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                                <article class="cancion-card" data-cancion="9">
+                    <div class="portada-cancion">
+                        <img src="assets/love9.jfif" alt="Portada de la canción 9" loading="lazy">
+                        <span class="numero-cancion">09</span>
+                    </div>
+                    <div class="informacion-cancion">
+                        <p class="subtitulo-cancion">Canción 09</p>
+                        <h3 class="titulo-cancion">Can´t Help Falling in Love</h3>
+                        <div class="reproductor-visual" aria-label="Barra visual decorativa; la canción se escucha en la plataforma musical">
+                            <span class="tiempo-actual">♡</span>
+                            <div class="barra-progreso" aria-hidden="true">
+                                <span class="progreso"></span>
+                                <span class="indicador-progreso"></span>
+                            </div>
+                            <span class="duracion">♫</span>
+                        </div>
+                        <div class="acciones-cancion">
+                            <a class="boton boton-escuchar boton-dorado" href="https://music.youtube.com/watch?v=TlrNxJqODBc&list=PLMPVl3c4ytqM" target="_blank" rel="noopener noreferrer">
+                                ▶ Escuchar canción
+                            </a>
+                            <button class="boton boton-mensaje" type="button"
+                                data-mensaje="mensaje-9" aria-haspopup="dialog">
+                                ¿Por qué esta? ♡
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="cancion-card" data-cancion="10">
+                    <div class="portada-cancion">
+                        <img src="assets/love10.jfif" alt="Portada de la canción 10" loading="lazy">
+                        <span class="numero-cancion">10</span>
+                    </div>
+                    <div class="informacion-cancion">
+                        <p class="subtitulo-cancion">Canción 10</p>
+                        <h3 class="titulo-cancion">I wanna be yours</h3>
+                        <div class="reproductor-visual" aria-label="Barra visual decorativa; la canción se escucha en la plataforma musical">
+                            <span class="tiempo-actual">♡</span>
+                            <div class="barra-progreso" aria-hidden="true">
+                                <span class="progreso"></span>
+                                <span class="indicador-progreso"></span>
+                            </div>
+                            <span class="duracion">♫</span>
+                        </div>
+                        <div class="acciones-cancion">
+                            <a class="boton boton-escuchar boton-dorado" href="https://music.youtube.com/watch?v=nyuo9-OjNNg&list=PLMPVl3c4ytqM" target="_blank" rel="noopener noreferrer">
+                                ▶ Escuchar canción
+                            </a>
+                            <button class="boton boton-mensaje" type="button"
+                                data-mensaje="mensaje-10" aria-haspopup="dialog">
+                                ¿Por qué esta? ♡
+                            </button>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="cancion-card" data-cancion="11">
+                    <div class="portada-cancion">
+                        <img src="assets/love11.jfif" alt="Portada de la canción 11" loading="lazy">
+                        <span class="numero-cancion">11</span>
+                    </div>
+                    <div class="informacion-cancion">
+                        <p class="subtitulo-cancion">Canción 11</p>
+                        <h3 class="titulo-cancion">Yes to heaven</h3>
+                        <div class="reproductor-visual" aria-label="Barra visual decorativa; la canción se escucha en la plataforma musical">
+                            <span class="tiempo-actual">♡</span>
+                            <div class="barra-progreso" aria-hidden="true">
+                                <span class="progreso"></span>
+                                <span class="indicador-progreso"></span>
+                            </div>
+                            <span class="duracion">♫</span>
+                        </div>
+                        <div class="acciones-cancion">
+                            <a class="boton boton-escuchar boton-dorado" href="https://music.youtube.com/watch?v=6ksOgOnX8q4&si=ZySpIZ_Ty4BQOTWD" target="_blank" rel="noopener noreferrer">
+                                ▶ Escuchar canción
+                            </a>
+                            <button class="boton boton-mensaje" type="button"
+                                data-mensaje="mensaje-11" aria-haspopup="dialog">
+                                ¿Por qué esta? ♡
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <div class="transicion-playlist">
+                <p>Y todavía falta una cosa… ♡</p>
+                <button class="boton boton-principal boton-dorado" id="boton-playlist" type="button">
+                    Ver nuestra playlist →
+                </button>
+            </div>
+        </section>
+
+        <!-- FASE 4: playlist que reúne todas las canciones -->
+        <section class="seccion-playlist" id="playlist" aria-labelledby="titulo-playlist" hidden>
+            <header class="encabezado-seccion">
+                <p class="etiqueta-decorativa">Nuestra playlist de canciones ♡</p>
+                <h2 id="titulo-playlist">Nuestra playlist</h2>
+                <p>Escucha la playlist cada que lo necesites.</p>
+            </header>
+
+            <ol class="lista-playlist" id="lista-playlist">
+                <li><span>01</span><span>Labios Rotos</span><a href="https://music.youtube.com/watch?v=7h2ryr_uUEs&list=PLMPVl3c4ytqM" target="_blank" rel="noopener noreferrer">Escuchar ↗</a></li>
+                <li><span>02</span><span>Soñé</span><a href="https://music.youtube.com/watch?v=HJqlA_HTEU8&list=PLMPVl3c4ytqM" target="_blank" rel="noopener noreferrer">Escuchar ↗</a></li>
+                <li><span>03</span><span>Locos</span><a href="https://music.youtube.com/watch?v=SXcFYnHSG08&list=PLMPVl3c4ytqM"" target="_blank" rel="noopener noreferrer">Escuchar ↗</a></li>
+                <li><span>04</span><span>Cariño</span><a href="https://music.youtube.com/watch?v=QHVp9xiUr9U&list=PLMPVl3c4ytqM" target="_blank" rel="noopener noreferrer">Escuchar ↗</a></li>
+                <li><span>05</span><span>Química Mayor</span><a href="https://music.youtube.com/watch?v=e23BTGIJcq8&list=PLMPVl3c4ytqM" target="_blank" rel="noopener noreferrer">Escuchar ↗</a></li>
+                <li><span>06</span><span>Frances Limón</span><a href="https://music.youtube.com/watch?v=23wz86ZbD-o&list=PLMPVl3c4ytqM" target="_blank" rel="noopener noreferrer">Escuchar ↗</a></li>
+                <li><span>07</span><span>Beso</span><a href="https://music.youtube.com/watch?v=ntdwWKaGaPQ&list=PLMPVl3c4ytqM" target="_blank" rel="noopener noreferrer">Escuchar ↗</a></li>
+                <li><span>08</span><span>Bésame mucho</span><a href="https://music.youtube.com/watch?v=CSELNSslBVk&list=PLMPVl3c4ytqM" target="_blank" rel="noopener noreferrer">Escuchar ↗</a></li>
+                <li><span>09</span><span>Can´t Help Falling in Love</span><a href="https://music.youtube.com/watch?v=TlrNxJqODBc&list=PLMPVl3c4ytqM" target="_blank" rel="noopener noreferrer">Escuchar ↗</a></li>
+                <li><span>10</span><span>I wanna be yours</span><a href="https://music.youtube.com/watch?v=nyuo9-OjNNg&list=PLMPVl3c4ytqM" target="_blank" rel="noopener noreferrer">Escuchar ↗</a></li>
+                <li><span>11</span><span>Yes to heaven</span><a href="https://music.youtube.com/watch?v=6ksOgOnX8q4&si=ZySpIZ_Ty4BQOTWD" target="_blank" rel="noopener noreferrer">Escuchar ↗</a></li>
+
+
+<a class="boton boton-escuchar-playlist boton-dorado" id="enlace-playlist" href="https://music.youtube.com/playlist?list=PLMPVl3c4ytqM&si=-UfE8q6VBg__7jEs" target="_blank" rel="noopener noreferrer">
+    ♫ Escuchar playlist completa
+</a>
+
+
+<div class="mensaje-final" id="mensaje-final">
+    <p class="etiqueta-decorativa">y una última cosita… ♡</p>
+
+    <h2>Escribí algo más para tí</h2>
+
+    <p>
+Me gustaría decirte algunas cosas en una carta especial para ti. ♡
+    </p>
+
+    <button
+        class="boton boton-principal boton-dorado"
+        id="boton-leer-carta"
+        type="button"
+        aria-haspopup="dialog"
+        aria-controls="modal-carta">
+        Leer mi carta
+    </button>
+</div>
+            
+<div class="volver-inicio-contenedor">
+<button
+    class="boton boton-principal boton-dorado"
+    id="boton-volver-inicio"
+    type="button">
+    ↺ Volver a empezar ♡
+</button>
+</div>
+        </section>
+    </main>
+    
+
+<!-- Efecto sorpresa del gatito explosivo -->
+<div id="explosion-gatito" class="explosion-gatito" hidden>
+
+    <div class="caja-gatito">
+        <img
+            id="imagen-explosion"
+            src="assets/boom.gif"
+            alt="Gatito explosivo de caricatura"
+        >
+    </div>
+
+    <button
+        type="button"
+        id="cerrar-explosion"
+        class="cerrar-explosion"
+        aria-label="Cerrar animación"
+    >×</button>
+
+</div>
+<audio id="sonido-explosion" preload="auto">
+    <source src="assets/audio.mp3" type="audio/mpeg">
+</audio>
+
+    <!-- FASE 5: un modal reutilizable para los mensajes de las canciones -->
+    <div class="fondo-modal" id="fondo-modal" hidden>
+        <section class="modal-mensaje" id="modal-mensaje" role="dialog"
+            aria-modal="true" aria-labelledby="titulo-modal" aria-describedby="texto-modal">
+            <button class="cerrar-modal" id="cerrar-modal" type="button" aria-label="Cerrar mensaje">×</button>
+            <p class="etiqueta-decorativa">un mensajito para ti ♡</p>
+            <h2 id="titulo-modal">¿Por qué esta canción?</h2>
+            <p id="texto-modal">Aquí escribirás el mensaje que acompaña a esta canción.</p>
+            <button class="boton boton-principal" id="boton-cerrar-modal" type="button">Cerrar ♡</button>
+        </section>
+    </div>
+
+    <!-- Mensajes de ejemplo: después se reemplazarán por tus textos reales -->
+    <div class="mensajes-ocultos" hidden aria-hidden="true">
+        <p id="mensaje-1">Esta canción me hace pensar en que amar a alguien no siempre significa que todo sea perfecto o fácil, sino también encontrar en esa persona un lugar donde sentirte comprendido en los momentos difíciles. Me gusta pensar que, incluso en los días complicados, podemos seguir encontrando tranquilidad el uno en el otro. Y si algo quiero, es que conmigo siempre sientas que tienes a alguien que te escucha, te cuida y te ama de verdad.</p>
+        <p id="mensaje-2">A veces me pongo a pensar en lo bonito que fue coincidir contigo, sin imaginarmelo hoy estamos aquí compartiendo tantas cosas lindas y juro que no me arrepiento de nada. Quiero que sigas siendo tu para siempre. Esta canción me hace pensar en todas las cosas bonitas que hemos vivido y que todavía nos quedan por vivir.</p>
+        <p id="mensaje-3">Desde que empecé a conocerte, me enamoré cada día más de ti. Creo que esta canción describe en gran parte lo que sentí cuando empecé a enamorarme de ti y lo que sigo sintiendo hasta el día de hoy. Desde que llegaste a mi vida con tu linda forma de ser, te has convertido en lo más bonito que me ha pasado y, sin duda, no podría imaginar mi vida sin ti. ♡</p>
+        <p id="mensaje-4">Esta canción me recuerda a esas cositas pequeñas que hacen me enamore cada vez más de tí, tu forma de ser, tu sentido del humor, los lindos momentos juntos, tu forma de ver las cosas y hasta esas cosas que probablemente ni te des cuenta que haces. Me gusta descubrirte poco a poco y encontrar nuevas razones para amarte cada vez más.</p>
+        <p id="mensaje-5">Hay algo muy bonito en conectar contigo de una manera que a veces ni siquiera sé explicar del todo, en que una pequeña conversación contigo me haga sonreír, en tener ganas de contarte cualquier pequeña cosa que me pase o en que tu presencia haga que un día normal se sienta mucho más especial y lindo. Me encanta que seas esa persona con la que hasta las cosas más simples se sienten bonitas, y esta canción me hace pensar en esa conexión tan especial que hay entre nosotros y en lo lindo que es haber encontrado a alguien como tú, alguien que poco a poco se ha vuelto tan cercano a mí y que consigue hacerme sentir tantas cosas bonitas sin siquiera darse cuenta. </p>
+        <p id="mensaje-6">Hay canciones que terminan teniendo un significado especial simplemente porque te recuerdan a alguien. A veces no es solo la letra, sino lo que sientes cuando la escuchas y la persona que amas se te viene a la mente. Esta canción la escucho siempre pensando en ti y en los momentos más lindos y cursis que hemos tenido.</p>
+        <p id="mensaje-7">Esta canción me da esa sensación bonita de estar enamorada y querer estar tan cerca de ti. Me hace pensar en el amor que se demuestra sin necesidad de hacer grandes cosas, ese amor único y profundo que se siente con algo tan simple como un beso. Esta es una de esas canciones que me hacen sonreír porque, inevitablemente, termino pensando en ti.</p>
+        <p id="mensaje-8">Esta canción me hace pensar en lo valiosos que se vuelven los momentos cuando estoy contigo, en esas ganas de detener el tiempo un momento para poder disfrutar de tu compañía. A veces quisiera que los momentos bonitos contigo duraran un poquito más, quedarme disfrutando de estar a tu lado y guardar cada recuerdo con mucho cariño. Porque me gusta compartir mi tiempo contigo, desde las cosas más sencillas hasta esos momentos que quizá algún día recordemos juntos con una sonrisa, pensando en lo bonito que fue vivirlos. Y si hay algo que tengo claro, es que quiero seguir creando muchísimos recuerdos más contigo.</p>
+        <p id="mensaje-9">A veces siento que, por más que intentara explicar todo lo que siento por ti, nunca encontraría las palabras suficientes. Es como si, sin darme cuenta, me hubiera enamorado de ti mucho más profundamente de lo que alguna vez imaginé, hasta llegar al punto en el que quisiera compartir contigo no solamente mis días bonitos, sino mi vida entera, como lo dice la canción.</p>
+        <p id="mensaje-10">Para mí, una de las cosas más bonitas de amar a alguien es querer formar parte de su vida de verdad, no solamente en los momentos especiales, sino también en los días más normales. Quiero conocer tus pequeñas costumbres, escuchar las cosas que te emocionan, acompañarte cuando tengas un día difícil y celebrar contigo cuando algo te salga bien, aunque pienses que es algo pequeño. Quiero ser esa persona con la que puedas contar, a quien le nazca escucharte y que quiera estar a tu lado incluso cuando no haya nada sorprendente pasando. Me gusta pensar que puedo llegar a formar parte de tu vida de esa manera tan bonita y sincera, porque cuando digo que quiero ser tuya, no me refiero solamente a amarte, sino a compartir contigo una parte de mí, de mis días y de mi vida, mientras seguimos conociéndonos y eligiéndonos en cada pequeña cosa.</p>
+        <p id="mensaje-11">Esta última canción es muy especial para mí por el significado tan lindo y profundo que tiene, y hoy, te la dedico a tí. Desde que llegaste a mi vida, hay una parte de mí que siempre termina volviendo a ti, porque, incluso cuando estamos haciendo cosas diferentes, sigues estando presente en mis pensamientos. Me gusta pensar que, entre todas las personas que existen, mis ojos y mi corazón te han elegido a ti, y que, sin importar cuánto nos falte por conocer del otro, quiero seguir descubriéndote cada día más. Si alguna vez necesitas alejarte un poquito para encontrar tu camino o si la vida nos lleva por momentos difíciles, quiero que sepas que aquí habrá alguien esperándote con los mismos sentimientos y las mismas ganas de volver a encontrarse contigo. No porque crea que todo será siempre fácil, sino porque quiero que sepas que no tienes que enfrentarte a todo tú solo, si alguna vez hay algo contra lo que luchar, quiero que lo afrontemos juntos, apoyándonos y recordándonos que estamos del mismo lado. Para mí, decirle que sí al cielo es como confesar ese amor que a veces las palabras no alcanzan a explicar, ese sentimiento de admirarte, de tenerte presente incluso desde lejos y de querer seguir eligiéndote. Y si algún día pudiera pedirte algo, sería que tú también me dijeras que sí, que me permitieras seguir formando parte de tu vida y que nos demos la oportunidad de descubrir todo lo bonito que todavía podemos vivir juntos. Porque yo sé que, mientras dependa de mí, siempre tendrás un lugar al que volver y una persona que quiera caminar a tu lado.
+</p>
+    </div>
+
+    
+<!-- Ventana emergente de la carta final -->
+<div class="fondo-modal fondo-modal-carta" id="fondo-modal-carta" hidden>
+    <section
+        class="modal-carta"
+        id="modal-carta"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="titulo-carta">
+
+        <button
+            class="cerrar-modal"
+            id="cerrar-carta"
+            type="button"
+            aria-label="Cerrar carta">×</button>
+
+        <div class="decoracion-carta" aria-hidden="true">♡</div>
+
+        <p class="etiqueta-decorativa">para ti, con todo mi amor</p>
+
+        <h2 id="titulo-carta">Una cartita para ti ♡</h2>
+
+        <div class="contenido-carta">
+            <p>Mi amor:</p>
+
+            <p>
+Hace un tiempo te dije que te dedicaría canciones de una manera especial y bonita, a pesar de ser un detalle virtual quería que sea significativo y especial, que lo veas y te haga sonreir.
+            </p>
+
+            <p>
+Cada canción te la dedico con mucho amor, quiero que escuches la playlist y leas cada mensajito cada que me extrañes o simplemente cuando pienses en mí y en todos los lindos momentos que hemos pasado juntos. 
+            </p>
+
+            <p>
+Espero este pequeño detalle te haga feliz, y sobre todo, te haga sentir lo especial que eres para mí y lo mucho que te amo con todo mi corazón.
+            </p>
+
+            <p class="firma-carta">
+                Con muchísimo amor, Vi. ♡
+            </p>
+        </div>
+
+        <button
+            class="boton boton-principal boton-dorado"
+            id="boton-cerrar-carta"
+            type="button">
+            Guardar mi cartita ♡
+        </button>
+    </section>
+</div>
+
+    <footer class="pie-pagina">
+        <p>Hecho con amor, para ti ♡</p>
+    </footer>
+</body>
+</html>
