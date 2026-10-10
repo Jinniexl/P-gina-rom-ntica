@@ -86,6 +86,12 @@ document.addEventListener("DOMContentLoaded", () => {
         "assets/gato4.jfif"
     ];
 
+    // Precargar los gatitos para evitar pausas al cambiar de imagen.
+gatos.forEach((ruta) => {
+    const imagen = new Image();
+    imagen.src = ruta;
+});
+
     function cerrarEfectoExplosion() {
         if (explosion) {
             explosion.hidden = true;

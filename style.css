@@ -1348,19 +1348,19 @@ gap: 16px;
     pointer-events: none;
 }
 
-.corazon-flotante {
+.lluvia-corazones .corazon-flotante {
     position: absolute;
     bottom: 12%;
     left: var(--posicion-x);
     color: var(--color-corazon);
     font-size: var(--tamano-corazon);
     opacity: 0;
-    animation: corazon-subiendo var(--duracion) ease-out forwards;
+    animation: lluvia-corazon-subiendo var(--duracion) ease-out forwards;
     animation-delay: var(--retraso);
     filter: drop-shadow(0 2px 5px rgba(168, 93, 118, 0.15));
 }
 
-@keyframes corazon-subiendo {
+@keyframes lluvia-corazon-subiendo {
     0% {
         transform: translate(0, 0) scale(0.4) rotate(-15deg);
         opacity: 0;
@@ -1381,9 +1381,3 @@ gap: 16px;
     }
 }
 
-@media (prefers-reduced-motion: reduce) {
-    .corazon-flotante {
-        animation: none;
-        display: none;
-    }
-}
